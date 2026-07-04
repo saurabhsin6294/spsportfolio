@@ -33,7 +33,7 @@ const SkillProgress = ({ name, level }) => (
       <motion.div 
         initial={{ width: 0 }}
         whileInView={{ width: `${level}%` }}
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full"
       />
@@ -45,7 +45,7 @@ const SkillCard = ({ category, index }) => (
   <motion.div 
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-50px" }}
+    viewport={{ once: true }}
     transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     whileHover={{ y: -8, scale: 1.02 }}
     className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-red-500/40 transition-colors duration-300 relative group overflow-hidden shadow-2xl flex flex-col justify-between"
