@@ -1,296 +1,298 @@
 // ============================================================
-// portfolioData.js — Centralized configuration for Md Yusuf's Portfolio
+// portfolioData.js — Centralized configuration for Saurabh Pratap Singh's Portfolio
 // All external links, personal info, and content in one place.
-// Update this file to change any content across the entire site.
 // ============================================================
 
 export const personalInfo = {
-  name: "Md Yusuf",
-  firstName: "Md Yusuf",
-  brandName: "Md Yusuf",
-  title: "Full Stack & Java Developer",
-  location: "Bhopal, India",
-  phone: "+91 99396-08743",
+  name: "Saurabh Pratap Singh",
+  firstName: "Saurabh",
+  brandName: "Saurabh",
+  title: "Full Stack Web Developer",
+  location: "Gorakhpur, UP, India",
+  phone: "+91 8853829494",
   emails: {
-    primary: "mdyusufcse096@iesuniversity.ac.in",
-    secondary: "yusuf.rgpv@gmail.com",
+    primary: "saurabhsin6294@gmail.com",
   },
   summary:
-    "Aspiring software engineer and motivated B.Tech Computer Science student with solid skills in Java, Spring Boot, React, and Python. Passionate about building scalable full-stack applications with clean architecture and modern tech stacks.",
-  resumeUrl: "/Md_Yusuf_Resume_2026.pdf",
+    "Full Stack Web Developer with hands-on experience building production-grade platforms using PHP (Laravel), React.js, and Tailwind CSS. Experienced in B2B SaaS architecture, e-commerce synchronizations, QA regression testing, and agile tools.",
+  resumeUrl: "/Saurabh_Pratap_Singh_Resume.pdf",
 };
 
 export const socialLinks = {
-  github: "https://github.com/mdyusuf0",
-  linkedin: "https://linkedin.com/in/mdyusuf0",
-  instagram: "https://instagram.com/heyyusuffff",
+  github: "https://github.com/saurabhsin6294",
+  linkedin: "https://www.linkedin.com/in/saurabh-pratap-singh-4a9968253",
+  instagram: "https://instagram.com/saurabhsingh_2608",
 };
 
 export const heroContent = {
-  greeting: "Hi, I'm Md Yusuf",
-  titleHighlight: "Full Stack & Java Developer",
+  greeting: "Hi, I'm Saurabh Pratap Singh",
+  titleHighlight: "Full Stack Developer",
   subtitle:
-    "I build fast, scalable applications using Java, Spring Boot, MERN Stack, and Python.",
+    "I build fast, scalable B2B SaaS and e-commerce applications using PHP, Laravel, React.js, and Tailwind CSS.",
   ctaPrimary: { text: "View My Work", href: "#projects" },
   ctaSecondary: {
     text: "Contact Me",
-    href: "mailto:mdyusufcse096@iesuniversity.ac.in?subject=Hiring Inquiry – Portfolio&body=Hello Md Yusuf,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
+    href: "mailto:saurabhsin6294@gmail.com?subject=Hiring Inquiry – Portfolio&body=Hello Saurabh,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
   },
-  ctaResume: { text: "Download Resume", href: "/Md_Yusuf_Resume_2026.pdf" },
+  ctaResume: { text: "Download Resume", href: "/Saurabh_Pratap_Singh_Resume.pdf" },
 };
 
 export const aboutContent = {
   heading: "Hello!",
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Md Yusuf</span>, an aspiring software engineer based in Bhopal, India, dedicated to crafting clean, functional, and highly scalable full-stack applications.`,
-  techStack: ["Java", "Spring Boot", "MERN Stack"],
+  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Saurabh Pratap Singh</span>, a results-oriented Full Stack Web Developer based in India, dedicated to crafting high-performance, production-grade applications using PHP, Laravel, React.js, and Tailwind CSS.`,
+  techStack: ["Laravel", "React.js", "PHP"],
 };
 
 export const skillsContent = {
   badge: "My Process",
   heading: "Here's how I turn ideas into real-world applications",
   description:
-    "I follow a structured, creative, and highly technical approach to turn ideas into robust full-stack applications.",
+    "I follow a structured, agile, and quality-centric workflow to deliver production-ready web products.",
   cards: [
     {
       number: "01",
-      title: "Research",
-      text: "I start by understanding goals, user requirements, and technical constraints to lay a rock-solid foundation for the project.",
+      title: "Analyze & Architect",
+      text: "Understanding client goals and designing scalable database schemas and clean backend architectures.",
     },
     {
       number: "02",
-      title: "Design",
-      text: "Crafting clean architecture, intuitive interfaces, and pixel-perfect wireframes that guarantee an engaging and accessible user experience.",
+      title: "Develop Modules",
+      text: "Building robust RESTful APIs in Laravel and responsive, interactive user interfaces in React.js.",
     },
     {
       number: "03",
-      title: "Develop",
-      text: "Building scalable backends and responsive frontends using modern tech stacks and best practices.",
+      title: "Rigorous QA",
+      text: "Executing functional and regression testing cycles using Jira, Slack, and Loom to squash performance bottlenecks.",
     },
     {
       number: "04",
-      title: "Deploy",
-      text: "Rigorous testing, performance optimization, and seamless deployment to cloud infrastructure, followed by ongoing support.",
+      title: "Optimize & Ship",
+      text: "Refactoring code, verifying builds, and deploying to platforms like Vercel with zero production defects.",
     },
   ],
-  endText: "Ready to ship!",
+  endText: "Ready to deploy!",
 };
 
-// Brand New Technical Skills Data
+// Technical Skills Stack
 export const technicalSkills = {
   categories: [
     {
-      title: "Programming Languages",
+      title: "Languages",
       skills: [
-        { name: "Java", level: 90 },
-        { name: "C++", level: 85 },
-        { name: "Python", level: 75 }
+        { name: "PHP", level: 92 },
+        { name: "JavaScript", level: 90 },
+        { name: "HTML5 & CSS3", level: 95 }
       ]
     },
     {
-      title: "Full Stack",
+      title: "Frameworks & CSS",
       skills: [
-        { name: "MERN Stack", level: 90 },
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
-        { name: "JavaScript", level: 92 }
-      ]
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Spring Boot", level: 88 },
-        { name: "FastAPI", level: 75 },
-        { name: "REST APIs", level: 90 }
+        { name: "Laravel", level: 92 },
+        { name: "React.js", level: 88 },
+        { name: "Next.js", level: 80 },
+        { name: "Tailwind CSS", level: 95 }
       ]
     },
     {
       title: "Databases",
       skills: [
-        { name: "MongoDB", level: 88 },
-        { name: "MySQL", level: 85 },
-        { name: "Firebase", level: 80 }
+        { name: "MySQL", level: 88 },
+        { name: "PostgreSQL", level: 85 }
       ]
     },
     {
-      title: "Tools & Automation",
+      title: "APIs & Integrations",
+      skills: [
+        { name: "Shopify API", level: 85 },
+        { name: "RESTful APIs", level: 90 },
+        { name: "reCAPTCHA v3", level: 80 },
+        { name: "SMTP / Email Delivery", level: 85 }
+      ]
+    },
+    {
+      title: "Tools & Agile Platforms",
       skills: [
         { name: "Git & GitHub", level: 90 },
-        { name: "VS Code", level: 95 },
-        { name: "Postman", level: 88 },
-        { name: "n8n", level: 82 },
-        { name: "MongoDB Compass", level: 85 },
-        { name: "Antigravity", level: 80 },
-        { name: "Codex", level: 75 }
+        { name: "Jira", level: 85 },
+        { name: "Slack & Loom", level: 90 },
+        { name: "XAMPP", level: 88 },
+        { name: "Vercel", level: 90 },
+        { name: "Brevo", level: 80 }
       ]
     },
     {
-      title: "Computer Science Concepts",
+      title: "Testing & QA Methodologies",
       skills: [
-        { name: "Data Structures", level: 88 },
-        { name: "Algorithms", level: 85 },
-        { name: "DBMS", level: 86 },
-        { name: "OOP", level: 90 },
-        { name: "Software Engineering", level: 84 }
+        { name: "Functional Testing", level: 92 },
+        { name: "Regression Testing", level: 90 },
+        { name: "Bug Tracking", level: 88 },
+        { name: "Test Documentation", level: 85 }
       ]
     }
   ]
 };
 
-// Brand New Content Creation Data
+// Content Creation Data (Left as placeholder to avoid breaking potential imports)
 export const contentCreation = {
-  badge: "Cinematic Content",
-  heading: "Creative Direction & Cinematic Edits",
-  description: "Beyond coding, I craft visual stories with premium editing, color grading, and creative pacing.",
-  categories: [
-    {
-      title: "Cinematic Reels",
-      description: "Visual stories crafted with cinematic lighting, premium color grading, and high-impact sound design.",
-      stats: "50+ Reels Created",
-      icon: "🎥"
-    },
-    {
-      title: "Travel Videos",
-      description: "Immersive travel vlogs and aesthetic edits capturing cultures, landscapes, and visual rhythms.",
-      stats: "15+ Countries/Cities",
-      icon: "✈️"
-    },
-    {
-      title: "Educational Reels",
-      description: "Fast-paced tech tutorials and educational content designed to simplify coding and software engineering.",
-      stats: "100k+ Views",
-      icon: "🧠"
-    },
-    {
-      title: "My Own Creative Edits",
-      description: "Experimental transitions, 3D overlays, and trendsetting visual effects that push creative bounds.",
-      stats: "Personal Projects",
-      icon: "⚡"
-    }
-  ]
+  badge: "Creative Works",
+  heading: "Other Interdisciplinary Works",
+  description: "Applying creative approaches to simplify technical communication.",
+  categories: []
 };
 
-// Brand New Leadership Data
+// Adapted for Education Timeline (formerly Leadership)
 export const leadershipList = [
   {
-    title: "IEEE Madhya Pradesh Section (Social Media Team)",
-    description: "Managed and coordinated digital content, driving audience engagement and designing interactive visual campaigns for tech events.",
-    role: "Social Media Coordinator",
-    badge: "Volunteer"
+    title: "Bachelor of Computer Applications (BCA)",
+    description: "Acquired deep understanding of software development, algorithms, databases, and Object-Oriented Programming principles.",
+    role: "SRMCEM, Lucknow",
+    badge: "2022 – 2025 (Score: 70%)"
   },
   {
-    title: "Team Coordinator – Go-Kart International Racing 2K25",
-    description: "Led multi-disciplinary teams in project management, budget control, and logistics coordination for a high-profile international racing event.",
-    role: "Team Coordinator",
-    badge: "Leadership"
+    title: "Intermediate (PCM)",
+    description: "Completed higher secondary education focusing on Physics, Chemistry, and Mathematics.",
+    role: "Kendriya Vidyalaya GKP",
+    badge: "2021 – 2022 (Score: 65%)"
   },
   {
-    title: "5-Day MOE IDE Bootcamp, Roorkee",
-    description: "Participated in an intensive Innovation, Design, and Entrepreneurship Bootcamp organized by the Ministry of Education at IIT Roorkee.",
-    role: "Bootcamp Graduate",
-    badge: "Innovation"
-  },
-  {
-    title: "Hosted INFORIA Tech Summit Hackathon",
-    description: "Organized and hosted the flagship hackathon, managing registrations, mentoring participant teams, and coordinating judge evaluations.",
-    role: "Hackathon Organizer",
-    badge: "Co-Curricular"
-  },
-  {
-    title: "Event Coordinator & Anchoring – INFORIA 2K25",
-    description: "Coordinated technical events and served as the main stage anchor, speaking in front of large crowds and managing the summit flow.",
-    role: "Stage Anchor & Coordinator",
-    badge: "Public Speaking"
+    title: "High School",
+    description: "Graduated with excellent scores, building a strong foundation in science, math, and logical thinking.",
+    role: "Kendriya Vidyalaya GKP",
+    badge: "2019 – 2020 (Score: 90.4%)"
   }
 ];
 
-// Brand New Internships Data
+// Professional Experience / Internships List
 export const internshipsList = [
   {
-    organization: "Netlink, Bhopal",
-    role: "Data Analytics & BI Tools Intern",
-    duration: "June 2025 - August 2025",
-    skills: ["Data Analytics", "Business Intelligence", "Dashboard Design", "Data Modeling"],
-    tech: ["Lumenore", "MySQL", "Excel", "BI Tools"]
+    organization: "Aadhnik Technology Pvt. Ltd. | eSyncora",
+    role: "Full Stack Developer – CRM Platform",
+    duration: "Jan 2026 - Present (Lucknow, UP / Remote)",
+    skills: [
+      "Leads & Deals modules with Kanban pipeline boards",
+      "Interactive analytics charts and pipeline funnels",
+      "RelatedTasks component with role-based access control",
+      "SMTP and production email integrations"
+    ],
+    tech: ["Laravel", "React.js", "Tailwind CSS", "TypeScript", "MySQL", "reCAPTCHA"]
   },
   {
-    organization: "Canva",
-    role: "Visual Content Creator & Designer",
-    duration: "May 2024 - June 2024",
-    skills: ["Visual Designing", "Poster Design", "Team Branding", "Asset Creation"],
-    tech: ["Canva Pro", "Figma", "Canva Design Suite"]
+    organization: "Aadhnik Technology Pvt. Ltd. | eSyncora",
+    role: "Full Stack Developer – VMS Platform",
+    duration: "Jan 2026 - Present (Lucknow, UP / Remote)",
+    skills: [
+      "B2B client procurement modules",
+      "Interactive onboarding flows for vendors",
+      "Analytics dashboards and database optimizations",
+      "Cross-device performance tuning"
+    ],
+    tech: ["Laravel", "React.js", "Tailwind CSS", "PostgreSQL", "Jira", "Agile"]
   },
   {
-    organization: "CollegeTips.in",
-    role: "Web Development Intern",
-    duration: "1 Month (Offline)",
-    skills: ["Frontend Development", "Responsive Layouts", "API Testing", "Web Performance"],
-    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"]
+    organization: "FirstShake",
+    role: "Full Stack Developer – E-Commerce Platform",
+    duration: "Jul 2025 - Jul 2026 (Remote)",
+    skills: [
+      "Brand Portal (product listing, order management)",
+      "Creator Portal (influencer marketing, affiliate tracking)",
+      "Shopify API integrations for multi-store sync",
+      "RESTful API design and secure authentication"
+    ],
+    tech: ["Laravel", "Tailwind CSS", "Shopify API", "REST APIs", "MySQL", "RBAC"]
+  },
+  {
+    organization: "FirstShake",
+    role: "QA Engineer",
+    duration: "Jul 2025 - Jul 2026 (Remote)",
+    skills: [
+      "Functional, regression, and cross-browser UI testing",
+      "Documenting issues in Jira and coordinating via Loom & Slack",
+      "Testing REST API endpoints and payload responses",
+      "Maintaining release-ready test case suites"
+    ],
+    tech: ["QA Testing", "Jira", "Slack", "Loom", "API Testing", "Bug Tracking"]
   }
 ];
 
-// Brand New Soft Skills Data
+// Soft Skills List
 export const softSkillsList = [
-  { name: "Leadership", icon: "👑", desc: "Guiding teams, managing tasks, and driving project completion with shared vision." },
-  { name: "Public Speaking", icon: "🎤", desc: "Confident stage presence, anchoring summits, and delivering articulate technical ideas." },
-  { name: "Team Collaboration", icon: "🤝", desc: "Collaborating across fields, building racing carts, and engineering code in sync." },
-  { name: "Communication", icon: "💬", desc: "Clear, concise, and structured interactions in both business and technical contexts." },
-  { name: "Problem Solving", icon: "🧩", desc: "Breaking down complex engineering tasks into clean, logical, and modular pieces." },
-  { name: "Adaptability", icon: "🌟", desc: "Quick to pick up new frameworks like FastAPI, Spring Boot, or automation tools like n8n." },
-  { name: "Creativity", icon: "🎨", desc: "Blending cinematic aesthetics with software structure to build premium experiences." },
-  { name: "Time Management", icon: "⏰", desc: "Balancing B.Tech studies, event hosting, and developing robust software platforms." }
+  { name: "Problem Solving", icon: "🧩", desc: "Analyzing complex system flows and designing clean database & code structures." },
+  { name: "Team Collaboration", icon: "🤝", desc: "Working in agile sprint environments with developers, product managers, and testers." },
+  { name: "Quality Minded", icon: "🛡️", desc: "Rigorous attention to edge cases, UI alignment, responsiveness, and performance." },
+  { name: "Technical Communication", icon: "💬", desc: "Writing clean documentations and recording precise video walkthroughs via Loom." },
+  { name: "Adaptability", icon: "🌟", desc: "Quickly learning new technologies, tools, and third-party APIs." },
+  { name: "Time Management", icon: "⏰", desc: "Handling parallel full-stack modules and QA cycles efficiently under tight deadlines." }
 ];
 
+// Projects List
 export const projects = [
   {
-    id: "foodmesh",
+    id: "crm-platform",
     number: "01",
-    badge: "🚀 Flagship Project",
-    title: "FoodMesh",
+    badge: "🚀 Production CRM",
+    title: "eSyncora CRM Platform",
     description:
-      "FoodMesh — An enterprise-grade multi-tenant restaurant management and food ordering SaaS platform inspired by UrbanPiper. It enables restaurants to manage multiple outlets, menus, inventory, customers, staff, and orders through a scalable architecture with secure authentication, role-based access control, and real-time operations. Built with React, Next.js, NestJS, PostgreSQL, Redis, Kafka, Elasticsearch, Docker, Kubernetes, and AWS.",
-    techTags: [
-      "React",
-      "Next.js",
-      "NestJS",
-      "PostgreSQL",
-      "Redis",
-      "Kafka",
-      "Elasticsearch",
-      "Docker",
-      "Kubernetes",
-      "AWS",
-    ],
+      "A production-grade B2B Customer Relationship Management (CRM) SaaS. Features a visual Leads & Deals pipeline, Kanban board system, detailed Reports, interactive pipeline funnel charts, and an access-controlled Tasks manager.",
+    techTags: ["Laravel", "React.js", "Tailwind CSS", "MySQL", "reCAPTCHA", "SMTP"],
     links: {
-      github: "https://github.com/ersamirsingh/UrbanPiper",
-      demo: null,
+      github: null,
+      demo: "https://crm.esyncora.com",
     },
     isFlagship: true,
   },
   {
-    id: "karigar",
+    id: "vms-platform",
     number: "02",
-    badge: null,
-    title: "Karigar",
+    badge: "⚡ Procurement SaaS",
+    title: "eSyncora Vendor Management System (VMS)",
     description:
-      "A platform connecting local skilled workers with customers, featuring real-time search, worker profiles, and booking management with full database integration.",
-    techTags: ["React", "Node.js", "MongoDB", "Express", "REST API"],
+      "A comprehensive SaaS system automating B2B client procurement. Integrates custom onboarding workflows, procurement modules, and detailed dashboard analytics with optimized cross-device performance.",
+    techTags: ["Laravel", "React.js", "Tailwind CSS", "PostgreSQL", "Jira", "Agile"],
     links: {
-      github: "https://github.com/mdyusuf0/Karigar",
-      frontendDemo: "https://karigar-frontend.onrender.com",
-      backendApi: "https://karigar-zny2.onrender.com",
+      github: null,
+      demo: "https://vms.esyncora.com",
     },
     isFlagship: false,
   },
   {
-    id: "sentiment-analysis",
+    id: "firstshake-ecommerce",
     number: "03",
-    badge: null,
-    title: "AI-Powered Sentiment Analysis",
+    badge: "🛍️ E-Commerce Portal",
+    title: "FirstShake E-Commerce Platform",
     description:
-      "A full-stack web application that analyzes citizen feedback using Artificial Intelligence to classify sentiments as positive, negative, or neutral. Features a responsive React frontend, a Node.js backend, MongoDB for data storage, and n8n automation for workflow orchestration — enabling real-time insights and efficient feedback management.",
-    techTags: ["React", "Node.js", "MongoDB", "n8n", "AI/ML", "REST API"],
+      "An advanced e-commerce platform encompassing a Brand Portal (product listing, order management, Shopify synchronization) and a Creator Portal (influencer marketing campaigns, affiliate referral tracking).",
+    techTags: ["Laravel", "Tailwind CSS", "Shopify API", "MySQL", "Authentication"],
     links: {
-      github: "#", // Update when available
+      github: null,
+      demo: "https://tryfirstshake.com/",
+    },
+    isFlagship: false,
+  },
+  {
+    id: "anti-cheat-exam",
+    number: "04",
+    badge: "🔒 Security Project",
+    title: "Online Exam Portal with Anti-Cheating Features",
+    description:
+      "A secure web-based examination platform developed with advanced browser-level integrity protocols: automatic full-screen enforcement, tab-switch detection counters, and auto-submit features on violations.",
+    techTags: ["JavaScript", "HTML5", "CSS3", "PHP"],
+    links: {
+      github: "https://github.com/saurabhsin6294",
+      demo: null,
+    },
+    isFlagship: false,
+  },
+  {
+    id: "e-billing",
+    number: "05",
+    badge: "📊 Collegiate Tool",
+    title: "E-Billing System",
+    description:
+      "An administrative billing management system built for collegiate systems featuring instant invoice PDF generation, purchase item tracking, payment status dashboards, and search parameters.",
+    techTags: ["PHP", "JavaScript", "CSS3", "MySQL"],
+    links: {
+      github: "https://github.com/saurabhsin6294",
+      demo: null,
     },
     isFlagship: false,
   },
@@ -299,61 +301,44 @@ export const projects = [
 export const certificates = {
   featured: [
     {
-      name: "Oracle Cloud Infrastructure 2025",
-      issuer: "Oracle",
-      icon: "☁️",
+      name: "Full Stack Web Development",
+      issuer: "Production Projects",
+      icon: "💻",
     },
     {
-      name: "Programming in Java (94%)",
-      issuer: "NPTEL",
-      icon: "☕",
-    },
-    {
-      name: "C Programming & Assembly Language",
-      issuer: "NPTEL",
+      name: "Laravel & PHP Backend Engineering",
+      issuer: "eSyncora Systems",
       icon: "⚙️",
     },
     {
-      name: "Technology Job Simulation",
-      issuer: "Deloitte",
-      icon: "💼",
-    },
-    {
-      name: "Career Edge – IT Primer",
-      issuer: "TCS iON",
-      icon: "🎓",
-    },
-    {
-      name: "Fundamentals of BI & Analytics",
-      issuer: "Lumenore",
-      icon: "📊",
+      name: "Quality Assurance & QA Methodologies",
+      issuer: "FirstShake Testing",
+      icon: "🛡️",
     },
   ],
-  viewAllUrl:
-    "https://drive.google.com/file/d/1ObdGWtVSx8SsfR4AcbCySSd9LFXcAs9f/view?usp=sharing",
+  viewAllUrl: "https://github.com/saurabhsin6294",
 };
 
 export const education = {
-  degree: "B.Tech – Computer Science & Engineering",
-  institution: "IES College of Technology (RGPV)",
-  cgpa: "8.35",
-  graduation: "2027",
-  twelfth: "12th Science – 81%",
-  tenth: "10th CBSE – 70%",
+  degree: "BCA – Bachelor of Computer Applications",
+  institution: "SRMCEM, Lucknow",
+  cgpa: "70%",
+  graduation: "2025",
+  twelfth: "12th Science – 65%",
+  tenth: "10th CBSE – 90.4%",
 };
 
 export const footerContent = {
   taglines: [
-    "Software Engineering & Web Dev",
-    "Java · Spring Boot · React",
-    "Full Stack Applications",
+    "Full Stack Web Development",
+    "PHP · Laravel · React.js · Tailwind CSS",
+    "Clean Code & QA Production Standards",
   ],
-  credential: "B.Tech CSE · CGPA 8.35",
-  copyright: `© ${new Date().getFullYear()} Md Yusuf | Built with React`,
+  credential: "BCA · SRMCEM Lucknow",
+  copyright: `© ${new Date().getFullYear()} Saurabh Pratap Singh | All Rights Reserved`,
 };
 
 // EmailJS Configuration
-// Will read directly from environment variables in Vite (starting with VITE_)
 export const emailjsConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_EMAILJS_SERVICE_ID",
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_EMAILJS_TEMPLATE_ID",

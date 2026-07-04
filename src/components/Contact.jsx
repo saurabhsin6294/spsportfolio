@@ -6,6 +6,7 @@ const Contact = () => {
   const ref = useRef(null);
   const formRef = useRef(null);
   const [status, setStatus] = useState('idle'); // idle, sending, success, error
+  const [errorMsg, setErrorMsg] = useState('');
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -27,45 +28,75 @@ const Contact = () => {
     const email = form.querySelector('#email')?.value || '';
     const message = form.querySelector('#message')?.value || '';
 
-    // Validate inputs
-    if (!firstName.trim() || !email.trim() || !message.trim()) {
+    // 1. Client-Side Validation Checks
+    if (!firstName.trim()) {
+      setErrorMsg("First Name is required.");
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
+      setTimeout(() => setStatus('idle'), 4000);
       return;
     }
 
-    // Check if EmailJS is configured (checking both placeholder values and falsy states)
-    const isConfigured = 
-      emailjsConfig.serviceId && 
-      emailjsConfig.serviceId !== 'YOUR_EMAILJS_SERVICE_ID' &&
-      emailjsConfig.templateId && 
-      emailjsConfig.templateId !== 'YOUR_EMAILJS_TEMPLATE_ID' &&
-      emailjsConfig.publicKey && 
-      emailjsConfig.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY';
-
-    if (!isConfigured) {
-      // EmailJS not configured — fallback to prefilled mailto
-      const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=Portfolio Contact from ${firstName} ${lastName}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
-      window.open(mailtoLink, '_blank');
-      setStatus('success');
-      formRef.current.reset();
-      setTimeout(() => setStatus('idle'), 3000);
+    if (!email.trim()) {
+      setErrorMsg("Email Address is required.");
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
       return;
     }
 
-    // EmailJS integration
+    // Email regex validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      setErrorMsg("Please enter a valid email address.");
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+      return;
+    }
+
+    if (!message.trim() || message.trim().length < 10) {
+      setErrorMsg("Message must be at least 10 characters long.");
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+      return;
+    }
+
+    // Permission checkbox validation
+    const permissionCheckbox = form.querySelector('#permission');
+    if (permissionCheckbox && !permissionCheckbox.checked) {
+      setErrorMsg("Please check the box giving permission to contact you.");
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+      return;
+    }
+
+    // 2. Fetch POST call to secure SMTP function
     try {
-      const emailjs = await import('@emailjs/browser');
-      await emailjs.sendForm(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        formRef.current,
-        emailjsConfig.publicKey
-      );
-      setStatus('success');
-      formRef.current.reset();
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          first_name: firstName.trim(),
+          last_name: lastName.trim(),
+          user_email: email.trim(),
+          message: message.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus('success');
+        setErrorMsg('');
+        formRef.current.reset();
+      } else {
+        console.error('SMTP Error:', data.error);
+        setErrorMsg(data.error || "Failed to send message. Try again.");
+        setStatus('error');
+      }
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Network Error:', error);
+      setErrorMsg("Network error. Please try again.");
       setStatus('error');
     }
 
@@ -178,10 +209,23 @@ const Contact = () => {
                 <p className="leading-relaxed max-w-[400px]">
                   Your message will be sent directly to my inbox. I typically respond within 24-48 hours.
                 </p>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
-                  <p className="max-w-[250px] leading-relaxed">
-                    For urgent inquiries, reach me at <a href={`mailto:${personalInfo.emails.primary}`} className="underline hover:text-white transition-colors">{personalInfo.emails.primary}</a>
-                  </p>
+                
+                <div className="flex flex-col gap-4 w-full">
+                  {status === 'error' && errorMsg && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="bg-black/30 border border-white/20 text-red-200 px-4 py-2.5 rounded-xl font-bold text-xs shadow-md flex items-center gap-2.5 w-full"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-[#ff2a2a] animate-pulse" />
+                      {errorMsg}
+                    </motion.div>
+                  )}
+                  
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
+                    <p className="max-w-[250px] leading-relaxed">
+                      For urgent inquiries, reach me at <a href={`mailto:${personalInfo.emails.primary}`} className="underline hover:text-white transition-colors">{personalInfo.emails.primary}</a>
+                    </p>
                   
                   <button 
                     type="submit" 
@@ -223,7 +267,8 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </form>
+          </div>
+        </form>
 
         </div>
       </div>

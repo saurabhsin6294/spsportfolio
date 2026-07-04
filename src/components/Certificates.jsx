@@ -54,7 +54,7 @@ const Certificates = () => {
           ))}
         </div>
 
-        {/* View All Certificates CTA */}
+        {/* View All Certificates CTA (Commented out as requested)
         <div data-aos="fade-up" data-aos-delay="700" className="flex justify-center">
           <a
             href={certificates.viewAllUrl}
@@ -71,6 +71,7 @@ const Certificates = () => {
             </svg>
           </a>
         </div>
+        */}
       </div>
 
       {/* Decorative stars (matching About section) */}
