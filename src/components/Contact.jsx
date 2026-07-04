@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { emailjsConfig, personalInfo, socialLinks } from '../data/portfolioData';
 
 const Contact = () => {
@@ -150,7 +150,6 @@ const Contact = () => {
                     id="firstName" 
                     name="first_name"
                     placeholder="First Name" 
-                    required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
@@ -169,7 +168,6 @@ const Contact = () => {
                     id="email" 
                     name="user_email"
                     placeholder="Email" 
-                    required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
@@ -182,7 +180,6 @@ const Contact = () => {
                     id="message" 
                     name="message"
                     placeholder="Type your message here" 
-                    required
                     className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium resize-none rounded-none"
                   ></textarea>
                 </div>
@@ -272,6 +269,26 @@ const Contact = () => {
 
         </div>
       </div>
+
+      {/* Floating Custom Toast Popup */}
+      <AnimatePresence>
+        {status === 'error' && errorMsg && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            className="fixed bottom-8 right-8 left-8 md:left-auto md:w-96 z-[99999] bg-black/95 backdrop-blur-md border border-red-500/30 text-white px-6 py-4 rounded-2xl shadow-[0_10px_30px_rgba(255,42,42,0.25)] flex items-center gap-4"
+          >
+            <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold text-lg shrink-0">
+              ⚠️
+            </div>
+            <div>
+              <h4 className="font-black text-sm text-red-400 uppercase tracking-wider">Validation Error</h4>
+              <p className="text-xs text-white/80 mt-0.5 font-medium">{errorMsg}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

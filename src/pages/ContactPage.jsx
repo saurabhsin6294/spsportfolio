@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { personalInfo, socialLinks } from '../data/portfolioData';
 
 const ContactPage = () => {
@@ -147,7 +147,6 @@ const ContactPage = () => {
                     type="text" 
                     id="firstName" 
                     placeholder="Saurabh"
-                    required
                     className="w-full bg-transparent border-b border-white/20 pb-2 text-base focus:outline-none focus:border-[#ff2a2a] transition-colors placeholder-white/20 font-medium"
                   />
                 </div>
@@ -168,7 +167,6 @@ const ContactPage = () => {
                   type="email" 
                   id="email" 
                   placeholder="saurabhsin6294@gmail.com"
-                  required
                   className="w-full bg-transparent border-b border-white/20 pb-2 text-base focus:outline-none focus:border-[#ff2a2a] transition-colors placeholder-white/20 font-medium"
                 />
               </div>
@@ -178,7 +176,6 @@ const ContactPage = () => {
                 <textarea 
                   id="message" 
                   placeholder="Hello, I'd like to collaborate with you on..." 
-                  required
                   rows={4}
                   className="w-full bg-transparent border-b border-white/20 pb-2 text-base focus:outline-none focus:border-[#ff2a2a] transition-colors placeholder-white/20 font-medium resize-none"
                 ></textarea>
@@ -328,6 +325,26 @@ const ContactPage = () => {
         </div>
 
       </div>
+
+      {/* Floating Custom Toast Popup */}
+      <AnimatePresence>
+        {status === 'error' && errorMsg && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            className="fixed bottom-8 right-8 left-8 md:left-auto md:w-96 z-[99999] bg-black/95 backdrop-blur-md border border-red-500/30 text-white px-6 py-4 rounded-2xl shadow-[0_10px_30px_rgba(255,42,42,0.25)] flex items-center gap-4"
+          >
+            <div className="w-8 h-8 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold text-lg shrink-0">
+              ⚠️
+            </div>
+            <div>
+              <h4 className="font-black text-sm text-red-400 uppercase tracking-wider">Validation Error</h4>
+              <p className="text-xs text-white/80 mt-0.5 font-medium">{errorMsg}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 };
