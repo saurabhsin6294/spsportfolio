@@ -18,7 +18,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Skills', path: '/#skills' },
+    { label: 'Experience', path: '/experience' },
+    { label: 'Projects', path: '/#projects' },
+    { label: 'Contact', path: '/contact' }
+  ];
 
   const hireMeMailto = `mailto:${personalInfo.emails.primary}?subject=Hiring Inquiry – Portfolio&body=Hello ${personalInfo.firstName},%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`;
 
@@ -45,11 +52,11 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`}
+              key={link.label} 
+              href={link.path}
               className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
             >
-              {link}
+              {link.label}
               {/* Smooth hover underline */}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -92,12 +99,12 @@ const Navbar = () => {
         <div className="flex flex-col px-6 space-y-4">
           {navLinks.map((link) => (
             <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`}
+              key={link.label} 
+              href={link.path}
               onClick={() => setIsOpen(false)}
               className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
             >
-              {link}
+              {link.label}
             </a>
           ))}
           <div className="pt-4 pb-2">
